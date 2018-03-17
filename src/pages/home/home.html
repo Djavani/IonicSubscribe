@@ -1,14 +1,35 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="light">
     <ion-title>
-      Ionic Blank
+      Subscribe Example
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <hello></hello>
+
+  <ion-item>
+    <ion-label floating>Nome</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+  </ion-item>
+  
+  <ion-list-header>
+    Escolha o subscribe para enviar
+  </ion-list-header>
+  <ion-list radio-group>
+    <ion-item>
+      <ion-label>Subscribe 1</ion-label>
+      <ion-radio checked="true" value="go" (ionSelect)="subscribe1Escolhido = true"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Subscribe 2</ion-label>
+      <ion-radio value="rust" (ionSelect)="subscribe1Escolhido = false"></ion-radio>
+    </ion-item>
+  </ion-list> 
+  
+
+  <button ion-button block color="light" (click)="submitEvent()">Submit event</button>
 </ion-content>
